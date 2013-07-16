@@ -9,7 +9,7 @@ allPandigitalNumbers :: Integer -> [Integer]
 allPandigitalNumbers n = reverse . sort . map (unDigits 10) . permutation $ [1..n]
 
 isPrime :: Integer -> Bool
-isPrime n = loop n 2 n
+isPrime n = loop n 2 (floor . sqrt . fromIntegral $ n)
   where
     loop n check limit  | check >= limit        =  True
                         | mod n check == 0      =  False
@@ -22,6 +22,3 @@ largestPandigitalPrime = loop 9
     loop n = case find isPrime (allPandigitalNumbers n) of
                 Just x -> x
                 Nothing -> loop (n - 1)
- 
-
-
