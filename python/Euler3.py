@@ -3,13 +3,9 @@ data = 600851475143
 number = 600851475143
 
 factor = 2
-factors = [1]
-while factor < int(math.sqrt(data)):
-	if number%factor==0:
-		factors.append(factor)
+while number != 1:
+	if number % factor == 0:
 		number = number / factor
 	else:
 		factor += 1
-factors.sort()
-factors.reverse()
-print factors[0]
+print factor

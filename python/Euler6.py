@@ -1,5 +1,5 @@
 limit = 100
-sum = limit * (limit + 1) / 2
-sumof = (2*limit + 1)*(limit + 1)*limit/6
-squareof = sum**2
-print squareof - sumof
+sum_of_squares = (2*limit + 1)*(limit + 1)*limit/6
+sums = limit * (limit + 1) / 2
+square_of_sums = sums**2
+print square_of_sums - sum_of_squares
