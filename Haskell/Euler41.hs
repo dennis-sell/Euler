@@ -1,3 +1,5 @@
+module Euler41 where
+
 import Data.Digits
 import Data.Maybe
 import Data.List
@@ -11,7 +13,7 @@ allPandigitalNumbers n = reverse . sort . map (unDigits 10) . permutation $ [1..
 isPrime :: Integer -> Bool
 isPrime n = loop n 2 (floor . sqrt . fromIntegral $ n)
   where
-    loop n check limit  | check >= limit        =  True
+    loop n check limit  | check > limit        =  True
                         | mod n check == 0      =  False
                         | otherwise             =  loop n (check + 1) limit
 
