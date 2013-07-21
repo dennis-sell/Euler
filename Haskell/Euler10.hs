@@ -12,5 +12,5 @@ sieveSundaram n = map (\ x -> 2 * x + 1) (filter (\x -> not (elem x nums)) [1..n
 sumOfPrimes :: Integer
 sumOfPrimes = sum . sieveSundaram $ 999999
 
-sumOfPrimes2 = sum . filter isPrime . reverse $ [1..2000000]
+sumOfPrimes2 = sum . filter isPrime . reverse $ [2..2000000]
 
