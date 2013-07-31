@@ -17,8 +17,9 @@ isPrime n = loop n 2 (floor . sqrt . fromIntegral $ n)
                         | mod n check == 0      =  False
                         | otherwise             =  loop n (check + 1) limit
 
+-- Can rule out 9th-Pandigital and 8th pandigital numbers because they are all divisible by 3. 
 largestPandigitalPrime :: Integer
-largestPandigitalPrime = loop 9
+largestPandigitalPrime = loop 7
   where
     loop 1 = 1
     loop n = case find isPrime (allPandigitalNumbers n) of
